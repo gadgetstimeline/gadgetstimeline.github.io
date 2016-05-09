@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gadget Timeline</title>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Gadget Timeline</h1>
+  <p>Gadget Timeline is a project loosely inspired on <a href="https://en.wikipedia.org/wiki/Engadget">gdgt</a>, meant to display your shiny gadgets on a timeline manner.</p>
+  <p>Currently for each gadget you can </p>
+  <p>Please feel free to <a href="https://github.com/gadgetstimeline/gadgetstimeline.github.io">fork this project</a> and create your own timeline.</p>
+
+  <div id="visualization"></div>
+
+  <h2>How to edit the timeline</h2>
+  <p>All you have to do is <a href="https://github.com/gadgetstimeline/gadgetstimeline.github.io">fork this project</a> and edit the <a href="https://github.com/gadgetstimeline/gadgetstimeline.github.io/blob/master/LICENSE">mygadgets.js</a> file.</p>
+  <p>It has two arrays, <code>categories</code> and <code>gadgets</code>:</p>
+  <p><pre><code class="javascript">var categories = [
+  {id: 1, content: 'Sample Category'},
+  {id: 2, content: 'Yet another gadget category'}
+];
+
+var gadgets = [
+  {
+    group: 1,
+    start: '2014-01-01',
+    end: '2015-06-30',
+    brand: 'Brand',
+    device: 'Device Name',
+    uri: 'https://en.wikipedia.org/wiki/Lorem_ipsum',
+    photo_uri: 'http://lorempixel.com/image_output/technics-q-c-640-480-10.jpg'
+  },
+  {
+    group: 2,
+    start: '2015-07-01',
+    brand: 'ACME Corp.',
+    device: 'Shiny Gadget',
+    wikipedia: 'https://en.wikipedia.org/wiki/Lorem_ipsum',
+    photo_uri: 'http://lorempixel.com/image_output/technics-q-c-640-480-1.jpg'
+  }
+];</code></pre></p>
+  <p>Each category has a numeric <code>id</code> and a <code>content</code> name. Each gadget has a <code>group</code> id (refering the category), a <code>start</code> date (on <code>YYYY-MM-DD</code> format), an optional <code>end</code> date, a <code>brand</code> name, a <code>device</code> name, and could have a <code>uri</code> for product page, a <code>wikipedia</code> uri and a <code>photo_uri</code>. Simple like that. :-)</p>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+  <script src="mygadgets.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
